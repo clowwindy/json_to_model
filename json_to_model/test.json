@@ -1,0 +1,158 @@
+{
+    "__class__": "HomeDate",
+    "date": "20130701", "news": [
+    {
+        "__class__": "News",
+        "image_source": "wonderjimmy \/ CC BY",
+        "title": "避免被警察叔叔抓走：不会和父母打电话的人必看技巧",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1195",
+        "image": "http:\/\/p3.zhimg.com\/26\/26\/26266008466a6e83682da2da9e59dbb1.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1195",
+        "id": 1195,
+        "ga_prefix": "070114",
+        "share_image": "http:\/\/d0.zhimg.com\/1195\/1372660687.jpg",
+        "thumbnail": "http:\/\/p1.zhimg.com\/d5\/39\/d5396d8874d59e9f43a96adb1e33cdcb.jpg"
+    },
+    {
+        "image_source": "Liam Quinn \/ CC BY-SA",
+        "title": "七月开始，不回家看爸妈都成违法了？又见标题党",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1194",
+        "image": "http:\/\/p1.zhimg.com\/02\/aa\/02aaf52cb8f12dcf5c8d09974895af0e.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1194",
+        "id": 1194,
+        "ga_prefix": "070113",
+        "share_image": "http:\/\/d0.zhimg.com\/1194\/1372659602.jpg",
+        "thumbnail": "http:\/\/p2.zhimg.com\/5a\/70\/5a704642277f0311fab38ba959ae8000.jpg"
+    },
+    {
+        "image_source": "OliverN5 \/ CC BY-ND",
+        "title": "知天下 · 初到美国的十大禁忌",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1193",
+        "image": "http:\/\/p4.zhimg.com\/30\/7c\/307c1240d1ed8789bb28c55315e1d0d5.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1193",
+        "id": 1193,
+        "ga_prefix": "070112",
+        "share_image": "http:\/\/d0.zhimg.com\/1193\/1372651201.jpg",
+        "thumbnail": "http:\/\/p1.zhimg.com\/0c\/58\/0c58746ddd8b8368d82a56c5b3c21aa2.jpg"
+    },
+    {
+        "image_source": "CFP",
+        "title": "联合会杯决赛：世界冠军 28 年来输得最惨的一场",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1190",
+        "image": "http:\/\/p4.zhimg.com\/c7\/8c\/c78c761a40478643172fdd029f5d0f9d.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1190",
+        "id": 1190,
+        "ga_prefix": "070111",
+        "share_image": "http:\/\/d0.zhimg.com\/1190\/1372657239.jpg",
+        "thumbnail": "http:\/\/p1.zhimg.com\/46\/13\/4613a59b7a6070365e3653e79d2684ad.jpg"
+    },
+    {
+        "image_source": "aresauburn™ \/ CC BY-SA",
+        "title": "不是找借口，但 iOS 7 的按钮可能真是「更好看」的",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1191",
+        "image": "http:\/\/p2.zhimg.com\/17\/09\/17094e7159e20941d760acd27dd254d4.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1191",
+        "id": 1191,
+        "ga_prefix": "070110",
+        "share_image": "http:\/\/d0.zhimg.com\/1191\/1372645668.jpg",
+        "thumbnail": "http:\/\/p4.zhimg.com\/c1\/48\/c148376e44b4e244274d3ced30b1d2c6.jpg"
+    },
+    {
+        "image_source": "Byrion Smith \/ CC BY",
+        "title": "Google Reader 今天下线，有哪些替代服务？",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1186",
+        "image": "http:\/\/p1.zhimg.com\/05\/6b\/056bd0b5fef36233289a86494aac1bea.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1186",
+        "id": 1186,
+        "ga_prefix": "070107",
+        "share_image": "http:\/\/d0.zhimg.com\/1186\/1372645661.jpg",
+        "thumbnail": "http:\/\/p3.zhimg.com\/60\/57\/60574eaa49d35d37679d8383121e98ba.jpg"
+    },
+    {
+        "image_source": "",
+        "title": "北京发现高仿假币，银行职员手把手教你认假钱",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1183",
+        "image": "http:\/\/p3.zhimg.com\/fa\/7c\/fa7c82744257299de50a29b2990787d7.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1183",
+        "id": 1183,
+        "ga_prefix": "070107",
+        "share_image": "http:\/\/d0.zhimg.com\/1183\/1372633202.jpg",
+        "thumbnail": "http:\/\/p2.zhimg.com\/a9\/76\/a976131ee9d3906899cba56371dfed84.jpg"
+    },
+    {
+        "image_source": "sima dimitric \/ CC BY",
+        "title": "南京两个孩子被饿死家中，推行儿童救助保护，难在哪？",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1182",
+        "image": "http:\/\/p3.zhimg.com\/6c\/c3\/6cc3b6ae294f2e33be4daf5a71852104.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1182",
+        "id": 1182,
+        "ga_prefix": "070107",
+        "share_image": "http:\/\/d0.zhimg.com\/1182\/1372633205.jpg",
+        "thumbnail": "http:\/\/p2.zhimg.com\/e5\/d8\/e5d8e676c7404487e31594cf88559cb6.jpg"
+    },
+    {
+        "image_source": "",
+        "title": "别闹了，高考状元们又不是爱玩网游才考上状元的",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1185",
+        "image": "http:\/\/p2.zhimg.com\/93\/ac\/93ace81340a4f397efbe46a3e4469f86.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1185",
+        "id": 1185,
+        "ga_prefix": "070107",
+        "share_image": "http:\/\/d0.zhimg.com\/1185\/1372654400.jpg",
+        "thumbnail": "http:\/\/p3.zhimg.com\/f3\/8d\/f38d4d97fb184f6b6f19f95a391aea14.jpg"
+    },
+    {
+        "image_source": "avlxyz \/ CC BY-SA",
+        "title": "瞎扯 · 我的杯杯呢",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1181",
+        "image": "http:\/\/p2.zhimg.com\/58\/4d\/584df79552881ee0dcf735d995adfd61.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1181",
+        "id": 1181,
+        "ga_prefix": "070107",
+        "share_image": "http:\/\/d0.zhimg.com\/1181\/1372633205.jpg",
+        "thumbnail": "http:\/\/p3.zhimg.com\/6f\/d1\/6fd1ceb4db3a19b6a4f29837834145f3.jpg"
+    }
+], "is_today": true, "top_stories": [
+    {
+        "__class__": "TopStory",
+        "__super__": "News",
+        "image_source": "CFP",
+        "title": "联合会杯决赛：世界冠军 28 年来输得最惨的一场",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1190",
+        "image": "http:\/\/p4.zhimg.com\/c7\/8c\/c78c761a40478643172fdd029f5d0f9d.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1190",
+        "ga_prefix": "070111",
+        "share_image": "http:\/\/d0.zhimg.com\/1190\/1372657239.jpg",
+        "id": 1190
+    },
+    {
+        "image_source": "aresauburn™ \/ CC BY-SA",
+        "title": "不是找借口，但 iOS 7 的按钮可能真是「更好看」的",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1191",
+        "image": "http:\/\/p2.zhimg.com\/17\/09\/17094e7159e20941d760acd27dd254d4.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1191",
+        "ga_prefix": "070110",
+        "share_image": "http:\/\/d0.zhimg.com\/1191\/1372645668.jpg",
+        "id": 1191
+    },
+    {
+        "image_source": "Byrion Smith \/ CC BY",
+        "title": "Google Reader 今天下线，有哪些替代服务？",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1186",
+        "image": "http:\/\/p1.zhimg.com\/05\/6b\/056bd0b5fef36233289a86494aac1bea.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1186",
+        "ga_prefix": "070107",
+        "share_image": "http:\/\/d0.zhimg.com\/1186\/1372645661.jpg",
+        "id": 1186
+    },
+    {
+        "image_source": "Corey Ann \/ CC BY-ND",
+        "title": "一周看点\r\n9. 老婆想要买 6 万元一件的婚纱，怎么办？",
+        "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1169",
+        "image": "http:\/\/p1.zhimg.com\/03\/96\/03969fb0ff2134afa35ca5ee22ca1a84.jpg",
+        "share_url": "http:\/\/daily.zhihu.com\/story\/1169",
+        "ga_prefix": "063013",
+        "share_image": "http:\/\/d0.zhimg.com\/1169\/1372579295.jpg",
+        "id": 1169
+    }
+], "display_date": "2013.7.1 星期一"}
