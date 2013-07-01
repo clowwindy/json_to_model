@@ -3,7 +3,7 @@
 
 import os.path
 import inflector
-from json_to_model.parser import NodeType
+from json_to_model.parser import NodeType, TreeNode
 from jinja2 import Environment, PackageLoader
 
 type_map = {
@@ -48,9 +48,16 @@ def get_type_of_first_obj_in_array(context, node):
     return None
 
 
+def property_is_inherited(context, node, property):
+    c = node.super_class
+    found = False
+    while c is not None:
+        found = property in c.children
+        c = c.super_class
+    return found
+
+
 def gen_code(pathname, context):
-    header_content = []
-    source_content = []
     env = Environment(loader=PackageLoader('generators', 'templates'))
     header_template = env.get_template('header.h')
     source_template = env.get_template('source.m')
@@ -59,6 +66,8 @@ def gen_code(pathname, context):
         class_name = english.classify(original_name)
         properties = []
         for node in clazz.children:
+            if property_is_inherited(context, clazz, node):
+                continue
             properties.append({
                 'type': get_property_type(context, node),
                 'name': get_property_name(context, node),

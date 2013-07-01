@@ -155,4 +155,10 @@
         "share_image": "http:\/\/d0.zhimg.com\/1169\/1372579295.jpg",
         "id": 1169
     }
-], "display_date": "2013.7.1 星期一"}
+], "display_date": "2013.7.1 星期一",
+"test_key": {
+    "__class__":"MyTest",
+    "name":"hello"
+}
+
+}
