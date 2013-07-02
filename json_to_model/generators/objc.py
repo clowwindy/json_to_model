@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import time
 import os.path
 import inflector
 from json_to_model.parser import NodeType, TreeNode
@@ -65,6 +66,7 @@ def gen_code(pathname, context):
         original_name = class_name
         class_name = english.classify(original_name)
         properties = []
+        includes = set()
         for node in clazz.children:
             if property_is_inherited(context, clazz, node):
                 continue
@@ -75,9 +77,17 @@ def gen_code(pathname, context):
                 'retain_type': retain_map[node.type],
                 'children_type': get_type_of_first_obj_in_array(context, node)
             })
+            if node.class_name:
+                includes.add(get_property_type(context, node))
+            if node.children:
+                if node.children[0].class_name:
+                    includes.add(get_property_type(context, node.children[0]))
 
         super_name = english.classify(clazz.super_class.class_name) if clazz.super_class else 'NSObject'
+        if super_name != 'NSObject':
+            includes.add(super_name)
+
         with open(os.path.join(pathname, '%s.h' % class_name), 'wb') as f:
-            f.write(header_template.render(class_name=class_name, super_name=super_name, properties=properties))
+            f.write(header_template.render(time=time.ctime(), class_name=class_name, super_name=super_name, properties=properties, includes=includes))
         with open(os.path.join(pathname, '%s.m' % class_name), 'wb') as f:
-            f.write(source_template.render(class_name=class_name, super_name=super_name, properties=properties))
+            f.write(source_template.render(time=time.ctime(), class_name=class_name, super_name=super_name, properties=properties))

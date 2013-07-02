@@ -1,8 +1,8 @@
 {
-    "__class__": "HomeDate",
+    "__class__": "HMRHomeDate",
     "date": "20130701", "news": [
     {
-        "__class__": "News",
+        "__class__": "HMRNews",
         "image_source": "wonderjimmy \/ CC BY",
         "title": "避免被警察叔叔抓走：不会和父母打电话的人必看技巧",
         "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1195",
@@ -114,8 +114,8 @@
     }
 ], "is_today": true, "top_stories": [
     {
-        "__class__": "TopStory",
-        "__super__": "News",
+        "__class__": "HMRTopStory",
+        "__super__": "HMRNews",
         "image_source": "CFP",
         "title": "联合会杯决赛：世界冠军 28 年来输得最惨的一场",
         "url": "http:\/\/daily.zhihu.com\/api\/1.2\/news\/1190",
@@ -155,10 +155,5 @@
         "share_image": "http:\/\/d0.zhimg.com\/1169\/1372579295.jpg",
         "id": 1169
     }
-], "display_date": "2013.7.1 星期一",
-"test_key": {
-    "__class__":"MyTest",
-    "name":"hello"
-}
-
+], "display_date": "2013.7.1 星期一"
 }
