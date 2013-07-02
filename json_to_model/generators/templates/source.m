@@ -50,7 +50,7 @@
 
 - (NSDictionary *)JSONDictionary {
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
-    NSMutableArray *_ = [[NSMutableArray alloc] init];
+    NSMutableArray *_;
 {% for property in properties %} {% if property.type == 'NSInteger' %}
     dictionary[@"{{ property.original_name }}"] = @(self.{{ property.name }});
 {% elif property.type == 'CGFloat' %}
