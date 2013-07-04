@@ -39,7 +39,7 @@
     if (self) {
         NSError *error = nil;
         id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-        if (!result) {
+        if (result) {
             self = [self initWithJSONDictionary:result];
         } else {
             return nil;
