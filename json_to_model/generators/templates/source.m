@@ -53,7 +53,11 @@
 }
 
 - (NSDictionary *)JSONDictionary {
+{% if super_name == 'NSObject' %}
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+{% else %}
+    NSMutableDictionary *dictionary = (NSMutableDictionary *)[super JSONDictionary];
+{% endif %}
     NSMutableArray *_;
 {% for property in properties %} {% if property.type == 'NSInteger' %}
     dictionary[@"{{ property.original_name }}"] = @(self.{{ property.name }});
