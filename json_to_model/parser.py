@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import json
+import glob
 
 
 class Context(object):
@@ -91,18 +92,3 @@ def get_generator(name):
         from generators import objc
         return objc
     return None
-
-
-def main():
-    content = json.load(open('test.json'))
-    node = TreeNode()
-    context = Context()
-    parse_node(content, node, context)
-    context.add_node(node)
-    context.build_inheritance()
-    get_generator('objc').gen_code('output/', context)
-    print node
-
-
-if __name__ == '__main__':
-    main()
