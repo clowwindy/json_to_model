@@ -85,39 +85,28 @@ And a peek at the [HMRLatestComment initWithJSONDictionary]:
         self = [super init];
     
         if (self) {
-     
             self.hottest = [[NSMutableArray alloc] initWithCapacity:16];
             for (NSDictionary *_ in dictionary[@"hottest"]) {
-                
                     [((NSMutableArray *)self.hottest) addObject:[[HMRComment alloc] initWithJSONDictionary:_]];
-                
             }
-      
             self.latest = [[NSMutableArray alloc] initWithCapacity:16];
             for (NSDictionary *_ in dictionary[@"latest"]) {
-                
                     [((NSMutableArray *)self.latest) addObject:[[HMRComment alloc] initWithJSONDictionary:_]];
-                
             }
-     
         }
         return self;
     }
 
-[HMRLatestComment initWithJSONDictionary]:
+[HMRComment initWithJSONDictionary]:
 
     - (id)initWithJSONDictionary:(NSDictionary *)dictionary {
     
         self = [super init];
     
         if (self) {
-     
             self.own = [dictionary[@"own"] boolValue];
-      
             self.author = (dictionary[@"author"] != [NSNull null]) ? dictionary[@"author"] : nil;
-      
             self.commentId = [dictionary[@"comment_id"] integerValue];
-      
         }
         return self;
     }
