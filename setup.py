@@ -8,9 +8,10 @@ setup(
     author='clowwindy',
     author_email='clowwindy42@gmail.com',
     url='https://github.com/clowwindy/json_to_model',
-    packages=['json_to_model'],
+    packages=['json_to_model', 'json_to_model.generators'],
     package_data={
-        'json_to_model': ['README.rst', 'LICENSE']
+        'json_to_model': ['README.rst', 'LICENSE'],
+        'json_to_model.generators': ['templates/*']
     },
     install_requires=['setuptools',
                       'Inflector>=2',

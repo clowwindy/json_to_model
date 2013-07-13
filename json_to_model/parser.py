@@ -89,6 +89,6 @@ def parse_node(json_node, parent_node, context):
 
 def get_generator(name):
     if name == 'objc':
-        from generators import objc
+        from json_to_model.generators import objc
         return objc
     return None

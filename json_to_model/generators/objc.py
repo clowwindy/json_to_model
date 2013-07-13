@@ -59,7 +59,7 @@ def property_is_inherited(context, node, property):
 
 
 def gen_code(pathname, context):
-    env = Environment(loader=PackageLoader('generators', 'templates'))
+    env = Environment(loader=PackageLoader('json_to_model.generators', 'templates'))
     header_template = env.get_template('header.h')
     source_template = env.get_template('source.m')
     for class_name, clazz in context.classes.iteritems():
