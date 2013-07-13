@@ -12,21 +12,23 @@ usage
 
 Suppose you have a json file `~/api/comment.json`:
 
-    {
-        "__class__": "HMRLatestComment",
-        "hottest": [{
-            "__class__": "HMRComment",
-            "comment_id": 0,
-            "author": "",
-            "own": false
-        }],
-        "latest": [{
-            "__class__": "HMRComment",
-            "comment_id": 0,
-            "author": "",
-            "own": false
-        }]
-    }
+```json
+{
+    "__class__": "HMRLatestComment",
+    "hottest": [{
+        "__class__": "HMRComment",
+        "comment_id": 0,
+        "author": "",
+        "own": false
+    }],
+    "latest": [{
+        "__class__": "HMRComment",
+        "comment_id": 0,
+        "author": "",
+        "own": false
+    }]
+}
+```
 
 Run:
 
@@ -45,68 +47,76 @@ Both models provide conversion methods from/to JSON data.
 NSNull are automatically handled. Children of array are also automatically converted.
 
 ~/models/HMRLatestComment.h:
-    
-    #import <Foundation/Foundation.h>
-    #import "HMRComment.h"
-    
-    @interface HMRLatestComment : NSObject
-    
-    - (id)initWithJSONData:(NSData *)data;
-    - (id)initWithJSONDictionary:(NSDictionary *)dictionary;
-    - (NSDictionary *)JSONDictionary;
-    - (NSData *)JSONData;
-    
-    @property (nonatomic, strong) NSArray * hottest;
-    @property (nonatomic, strong) NSArray * latest;
-    
-    @end
+
+```objc
+#import <Foundation/Foundation.h>
+#import "HMRComment.h"
+
+@interface HMRLatestComment : NSObject
+
+- (id)initWithJSONData:(NSData *)data;
+- (id)initWithJSONDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)JSONDictionary;
+- (NSData *)JSONData;
+
+@property (nonatomic, strong) NSArray * hottest;
+@property (nonatomic, strong) NSArray * latest;
+
+@end
+```
    
 ~/models/HMRComment.h:
 
-    #import <Foundation/Foundation.h>
-    
-    @interface HMRComment : NSObject
-    
-    - (id)initWithJSONData:(NSData *)data;
-    - (id)initWithJSONDictionary:(NSDictionary *)dictionary;
-    - (NSDictionary *)JSONDictionary;
-    - (NSData *)JSONData;
-    
-    @property (nonatomic, assign) BOOL own;
-    @property (nonatomic, copy) NSString * author;
-    @property (nonatomic, assign) NSInteger commentId;
-    
-    @end
+```objc
+#import <Foundation/Foundation.h>
+
+@interface HMRComment : NSObject
+
+- (id)initWithJSONData:(NSData *)data;
+- (id)initWithJSONDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)JSONDictionary;
+- (NSData *)JSONData;
+
+@property (nonatomic, assign) BOOL own;
+@property (nonatomic, copy) NSString * author;
+@property (nonatomic, assign) NSInteger commentId;
+
+@end
+```
 
 And a peek at the [HMRLatestComment initWithJSONDictionary]:
 
-    - (id)initWithJSONDictionary:(NSDictionary *)dictionary {
-    
-        self = [super init];
-    
-        if (self) {
-            self.hottest = [[NSMutableArray alloc] initWithCapacity:16];
-            for (NSDictionary *_ in dictionary[@"hottest"]) {
-                    [((NSMutableArray *)self.hottest) addObject:[[HMRComment alloc] initWithJSONDictionary:_]];
-            }
-            self.latest = [[NSMutableArray alloc] initWithCapacity:16];
-            for (NSDictionary *_ in dictionary[@"latest"]) {
-                    [((NSMutableArray *)self.latest) addObject:[[HMRComment alloc] initWithJSONDictionary:_]];
-            }
+```objc
+- (id)initWithJSONDictionary:(NSDictionary *)dictionary {
+
+    self = [super init];
+
+    if (self) {
+        self.hottest = [[NSMutableArray alloc] initWithCapacity:16];
+        for (NSDictionary *_ in dictionary[@"hottest"]) {
+                [((NSMutableArray *)self.hottest) addObject:[[HMRComment alloc] initWithJSONDictionary:_]];
         }
-        return self;
+        self.latest = [[NSMutableArray alloc] initWithCapacity:16];
+        for (NSDictionary *_ in dictionary[@"latest"]) {
+                [((NSMutableArray *)self.latest) addObject:[[HMRComment alloc] initWithJSONDictionary:_]];
+        }
     }
+    return self;
+}
+```
 
 [HMRComment initWithJSONDictionary]:
 
-    - (id)initWithJSONDictionary:(NSDictionary *)dictionary {
-    
-        self = [super init];
-    
-        if (self) {
-            self.own = [dictionary[@"own"] boolValue];
-            self.author = (dictionary[@"author"] != [NSNull null]) ? dictionary[@"author"] : nil;
-            self.commentId = [dictionary[@"comment_id"] integerValue];
-        }
-        return self;
+```objc
+- (id)initWithJSONDictionary:(NSDictionary *)dictionary {
+
+    self = [super init];
+
+    if (self) {
+        self.own = [dictionary[@"own"] boolValue];
+        self.author = (dictionary[@"author"] != [NSNull null]) ? dictionary[@"author"] : nil;
+        self.commentId = [dictionary[@"comment_id"] integerValue];
     }
+    return self;
+}
+```
