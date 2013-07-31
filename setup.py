@@ -14,7 +14,7 @@ setup(
         'json_to_model.generators': ['templates/*']
     },
     install_requires=['setuptools',
-                      'Inflector>=2',
+                      'Inflector=2.0.1',
                       'Jinja2',
     ],
     entry_points="""
