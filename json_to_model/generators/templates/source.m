@@ -14,7 +14,7 @@
 {% endif %}
     if (self) {
 {% for property in properties %} {% if property.type == 'NSInteger' %}
-        self.{{ property.name }} = [(dictionary[@"{{ property.original_name }}"] != [NSNull null]) ? dictionary[@"{{ property.original_name }}"] integerValue] : 0;
+        self.{{ property.name }} = (dictionary[@"{{ property.original_name }}"] != [NSNull null]) ? [dictionary[@"{{ property.original_name }}"] integerValue] : 0;
 {% elif property.type == 'CGFloat' %}
         self.{{ property.name }} = (dictionary[@"{{ property.original_name }}"] != [NSNull null]) ? [dictionary[@"{{ property.original_name }}"] floatValue] : 0;
 {% elif property.type == 'BOOL' %}
