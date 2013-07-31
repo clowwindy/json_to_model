@@ -14,11 +14,11 @@
 {% endif %}
     if (self) {
 {% for property in properties %} {% if property.type == 'NSInteger' %}
-        self.{{ property.name }} = [dictionary[@"{{ property.original_name }}"] integerValue];
+        self.{{ property.name }} = [(dictionary[@"{{ property.original_name }}"] != [NSNull null]) ? dictionary[@"{{ property.original_name }}"] integerValue] : 0;
 {% elif property.type == 'CGFloat' %}
-        self.{{ property.name }} = [dictionary[@"{{ property.original_name }}"] floatValue];
+        self.{{ property.name }} = (dictionary[@"{{ property.original_name }}"] != [NSNull null]) ? [dictionary[@"{{ property.original_name }}"] floatValue] : 0;
 {% elif property.type == 'BOOL' %}
-        self.{{ property.name }} = [dictionary[@"{{ property.original_name }}"] boolValue];
+        self.{{ property.name }} = (dictionary[@"{{ property.original_name }}"] != [NSNull null]) ? [dictionary[@"{{ property.original_name }}"] boolValue] : NO;
 {% elif property.type == 'NSString *' %}
         self.{{ property.name }} = (dictionary[@"{{ property.original_name }}"] != [NSNull null]) ? dictionary[@"{{ property.original_name }}"] : nil;
 {% elif property.type == 'NSArray *' %}
