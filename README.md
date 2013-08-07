@@ -33,7 +33,7 @@ Suppose you have a json file `~/api/comment.json`:
 Run:
 
     pip install json_to_model
-    json_to_model path/to/json -i ~/api -o ~/models
+    json_to_model -i ~/api -o ~/models
 
 You'll get:
 
