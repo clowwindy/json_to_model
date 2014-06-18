@@ -24,7 +24,9 @@
 {% elif property.type == 'NSArray *' %}
         self.{{ property.name }} = [[NSMutableArray alloc] initWithCapacity:16];
         for (NSDictionary *_ in dictionary[@"{{ property.original_name }}"]) {
-            {% if property.children_type.split(' ')[0] in ['NSString', 'NSArray', 'BOOL', 'CGFloat'] %}
+            {% if property.children_type.split(' ')[0] in ['NSString', 'NSArray'] %}
+                [((NSMutableArray *)self.{{ property.name }}) addObject:_];
+            {% elif property.children_type.split(' ')[0] in ['NSInteger', 'BOOL', 'CGFloat'] %}
                 [((NSMutableArray *)self.{{ property.name }}) addObject:_];
             {% else %}
                 [((NSMutableArray *)self.{{ property.name }}) addObject:[[{{ property.children_type.split(' ')[0] }} alloc] initWithJSONDictionary:_]];
@@ -69,13 +71,19 @@
     {
         NSMutableArray *_ = [[NSMutableArray alloc] init];
         dictionary[@"{{ property.original_name }}"] = _;
+        {% if property.children_type.split(' ')[0] in ['NSInteger', 'BOOL', 'CGFloat'] %}
+        for (NSNumber *__ in self.{{ property.name }}) {
+            [_ addObject:__];
+        }
+        {% else %}
         for ({{ property.children_type.split(' ')[0] }} *__ in self.{{ property.name }}) {
-            {% if property.children_type.split(' ')[0] in ['NSString', 'NSArray', 'BOOL', 'CGFloat'] %}
+            {% if property.children_type.split(' ')[0] in ['NSString', 'NSArray'] %}
                 [_ addObject:__];
             {% else %}
                 [_ addObject:[__ JSONDictionary]];
             {% endif %}
         }
+        {% endif %}
     }
 {% else %}
     dictionary[@"{{ property.original_name }}"] = (self.{{ property.name }} == nil) ? [NSNull null] : self.{{ property.name }};

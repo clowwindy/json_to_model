@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="json_to_model",
-    version="1.0.3",
+    version="1.0.4",
     license='MIT',
     description="automatically convert json to model defination",
     author='clowwindy',
@@ -13,7 +13,7 @@ setup(
         'json_to_model': ['README.rst', 'LICENSE'],
         'json_to_model.generators': ['templates/*']
     },
-    install_requires=['setuptools',
+    install_requires=[
                       'Inflector==2.0.1',
                       'Jinja2',
     ],

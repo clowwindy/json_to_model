@@ -1,6 +1,8 @@
 JSON to model
 =============
 
+[![PyPI version]][PyPI]
+
 Convert JSON api to Objective-C model (other languages as well in the future)
 
 Got tired of writing models and JSON parsers? Then generate them automatically!
@@ -120,3 +122,6 @@ And a peek at the [HMRLatestComment initWithJSONDictionary]:
     return self;
 }
 ```
+
+[PyPI]:              https://pypi.python.org/pypi/json_to_model
+[PyPI version]:      https://img.shields.io/pypi/v/json_to_model.svg?style=flat
