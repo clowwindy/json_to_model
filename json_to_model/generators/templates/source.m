@@ -33,7 +33,7 @@
             {% endif %}
         }
 {% else %}
-        [self.{{ property.name }} = (dictionary[@"{{ property.original_name }}"] == [NSNull null]) ? nil : [{{ property.type.split(' ')[0] }} alloc] initWithJSONDictionary: dictionary[@"{{ property.original_name }}"]];
+        self.{{ property.name }} = (dictionary[@"{{ property.original_name }}"] == [NSNull null] || dictionary[@"{{ property.original_name }}"] == nil) ? nil : [[{{ property.type.split(' ')[0] }} alloc] initWithJSONDictionary: dictionary[@"{{ property.original_name }}"]];
 {% endif %} {% endfor %}
     }
     return self;
