@@ -26,6 +26,11 @@ retain_map = {
 
 english = inflector.English()
 
+name_table = {
+    'id': 'ID',
+    'description': 'descriptionData'
+}
+
 
 def get_property_type(context, node):
     result = type_map.get(node.type, None)
@@ -36,10 +41,9 @@ def get_property_type(context, node):
 
 def get_property_name(context, node):
     name = english.variablize(node.name)
-    if name != 'id':
-        return name
-    else:
-        return 'ID'
+    if name in name_table:
+        return name_table[name]
+    return name
 
 
 def get_type_of_first_obj_in_array(context, node):

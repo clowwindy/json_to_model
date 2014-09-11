@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="json_to_model",
-    version="1.0.5",
+    version="1.0.6",
     license='MIT',
     description="automatically convert json to model defination",
     author='clowwindy',
