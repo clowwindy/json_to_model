@@ -9,8 +9,12 @@
 - (id)initWithJSONDictionary:(NSDictionary *)dictionary {
 {% if super_name == 'NSObject' %}
     self = [super init];
+    if (![dictionary isKindOfClass:[NSDictionary class]])
+        return nil;
 {% else %}
     self = [super initWithJSONDictionary:dictionary];
+    if (self == nil)
+        return nil;
 {% endif %}
     if (self) {
 {% for property in properties %} {% if property.type == 'NSInteger' %}
