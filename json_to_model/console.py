@@ -14,6 +14,7 @@ def parse_args():
                                      epilog='Please send bug reports to clowwindy <clowwindy42@gmail.com>')
     parser.add_argument('-i', '--input', required=True, help='a directory containing json files')
     parser.add_argument('-o', '--output', required=True, help='a directory for output files')
+    parser.add_argument('-l', '--language', default='objc', help='language, default: objc')
     return parser.parse_args()
 
 
@@ -28,7 +29,7 @@ def main():
         parse_node(content, node, context)
         context.add_node(node)
         context.build_inheritance()
-        get_generator('objc').gen_code(args.output, context)
+        get_generator(args.language).gen_code(args.output, context)
 
 if __name__ == '__main__':
     main()

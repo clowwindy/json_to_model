@@ -91,4 +91,8 @@ def get_generator(name):
     if name == 'objc':
         from json_to_model.generators import objc
         return objc
-    return None
+    elif name == 'swift':
+        from json_to_model.generators import swift
+        return swift
+    raise Exception('language %s not supported' % name )
+
