@@ -12,8 +12,6 @@ class {{ class_name }} : {{ super_name }} {
     var {{ property.name }} : {{ property.type }}? = {{ property.default_value }}
     {% endif %}
 {% endfor %}
-
-
 {% if super_name == 'NSObject' %}
    init(JSONDictionary: NSDictionary) {
 {% else %}
