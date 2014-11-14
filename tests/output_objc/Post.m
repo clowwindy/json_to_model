@@ -14,7 +14,7 @@
 
     if (self) {
  
-        self.title = (dictionary[@"title"] != [NSNull null]) ? dictionary[@"title"] : nil;
+        self.author = (dictionary[@"author"] == [NSNull null] || dictionary[@"author"] == nil) ? nil : [[User alloc] initWithJSONDictionary: dictionary[@"author"]];
   
         self.replies = [[NSMutableArray alloc] initWithCapacity:16];
         for (NSDictionary *_ in dictionary[@"replies"]) {
@@ -23,9 +23,9 @@
             
         }
   
-        self.summary = (dictionary[@"summary"] != [NSNull null]) ? dictionary[@"summary"] : nil;
+        self.title = (dictionary[@"title"] != [NSNull null]) ? dictionary[@"title"] : nil;
   
-        self.user = (dictionary[@"user"] == [NSNull null] || dictionary[@"user"] == nil) ? nil : [[User alloc] initWithJSONDictionary: dictionary[@"user"]];
+        self.summary = (dictionary[@"summary"] != [NSNull null]) ? dictionary[@"summary"] : nil;
   
         self.time = (dictionary[@"time"] != [NSNull null]) ? [dictionary[@"time"] integerValue] : 0;
   
@@ -54,7 +54,7 @@
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
 
  
-    dictionary[@"title"] = (self.title != nil) ? self.title : [NSNull null];
+    dictionary[@"author"] = (self.author == nil) ? [NSNull null] : self.author;
   
     {
         NSMutableArray *_ = [[NSMutableArray alloc] init];
@@ -68,9 +68,9 @@
         
     }
   
-    dictionary[@"summary"] = (self.summary != nil) ? self.summary : [NSNull null];
+    dictionary[@"title"] = (self.title != nil) ? self.title : [NSNull null];
   
-    dictionary[@"user"] = (self.user == nil) ? [NSNull null] : self.user;
+    dictionary[@"summary"] = (self.summary != nil) ? self.summary : [NSNull null];
   
     dictionary[@"time"] = @(self.time);
   

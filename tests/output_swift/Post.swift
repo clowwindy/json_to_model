@@ -5,7 +5,7 @@ import Foundation
 class Post : NSObject {
 
     
-    var title : String? = nil
+    var author : User? = nil
     
 
     
@@ -13,11 +13,11 @@ class Post : NSObject {
     
 
     
-    var summary : String? = nil
+    var title : String? = nil
     
 
     
-    var user : User? = nil
+    var summary : String? = nil
     
 
     
@@ -32,8 +32,8 @@ class Post : NSObject {
    init(JSONDictionary: NSDictionary) {
 
  
-        if (!(JSONDictionary["title"] is NSNull)) {
-            self.title = JSONDictionary["title"] as String?
+        if (!(JSONDictionary["author"] is NSNull)) {
+            self.author = User(JSONDictionary:JSONDictionary["author"] as NSDictionary)
         }
   
         for child in (JSONDictionary["replies"] as NSArray) {
@@ -42,12 +42,12 @@ class Post : NSObject {
         
         }
   
-        if (!(JSONDictionary["summary"] is NSNull)) {
-            self.summary = JSONDictionary["summary"] as String?
+        if (!(JSONDictionary["title"] is NSNull)) {
+            self.title = JSONDictionary["title"] as String?
         }
   
-        if (!(JSONDictionary["user"] is NSNull)) {
-            self.user = User(JSONDictionary:JSONDictionary["user"] as NSDictionary)
+        if (!(JSONDictionary["summary"] is NSNull)) {
+            self.summary = JSONDictionary["summary"] as String?
         }
   
         if (!(JSONDictionary["time"] is NSNull)) {
@@ -78,7 +78,7 @@ class Post : NSObject {
         var dictionary : NSMutableDictionary = NSMutableDictionary()
 
  
-        dictionary["title"] = (self.title != nil) ? self.title : NSNull()
+        dictionary["author"] = (self.author == nil) ? NSNull() : self.author
   
         var _replies : NSMutableArray = NSMutableArray()
         dictionary["replies"] = _replies
@@ -88,9 +88,9 @@ class Post : NSObject {
             
         }
   
-        dictionary["summary"] = (self.summary != nil) ? self.summary : NSNull()
+        dictionary["title"] = (self.title != nil) ? self.title : NSNull()
   
-        dictionary["user"] = (self.user == nil) ? NSNull() : self.user
+        dictionary["summary"] = (self.summary != nil) ? self.summary : NSNull()
   
         dictionary["time"] = self.time
   

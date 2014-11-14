@@ -13,13 +13,13 @@
 - (NSData *)JSONData;
 
 
-@property (nonatomic, copy) NSString * title;
+@property (nonatomic, strong) User * author;
 
 @property (nonatomic, strong) NSArray * replies;
 
-@property (nonatomic, copy) NSString * summary;
+@property (nonatomic, copy) NSString * title;
 
-@property (nonatomic, strong) User * user;
+@property (nonatomic, copy) NSString * summary;
 
 @property (nonatomic, assign) NSInteger time;
 

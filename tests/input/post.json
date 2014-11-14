@@ -4,7 +4,7 @@
     "title": "Vocation",
     "summary": "We went to the islands.",
     "time": 1415952555,
-    "user": {
+    "author": {
       "__class__": "User",
       "username": "Alice",
       "age": 17,
@@ -20,7 +20,7 @@
       {
         "__class__": "Reply",
         "__super__": "Post",
-        "reply_to": 1024
+        "to_id": 1024
       }
     ]
 }

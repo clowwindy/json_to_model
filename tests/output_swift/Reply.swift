@@ -5,7 +5,7 @@ import Foundation
 class Reply : Post {
 
     
-    var replyTo : Int = 0
+    var toId : Int = 0
     
 
 
@@ -13,8 +13,8 @@ class Reply : Post {
         super.init(JSONDictionary: JSONDictionary)
 
  
-        if (!(JSONDictionary["reply_to"] is NSNull)) {
-            self.replyTo = JSONDictionary["reply_to"]!.integerValue
+        if (!(JSONDictionary["to_id"] is NSNull)) {
+            self.toId = JSONDictionary["to_id"]!.integerValue
         }
  
     }
@@ -37,7 +37,7 @@ class Reply : Post {
         var dictionary : NSMutableDictionary = super.JSONDictionary() as NSMutableDictionary
 
  
-        dictionary["reply_to"] = self.replyTo
+        dictionary["to_id"] = self.toId
  
         return dictionary;
     }
