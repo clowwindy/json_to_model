@@ -4,17 +4,23 @@
 import glob
 import argparse
 import os.path
-from parser import *
+import json
+from parser import TreeNode, Context, parse_node, get_generator
 
 __all__ = ['main']
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='Convert json to model source file. Currently supports Objective C',
-                                     epilog='Please send bug reports to clowwindy <clowwindy42@gmail.com>')
-    parser.add_argument('-i', '--input', required=True, help='a directory containing json files')
-    parser.add_argument('-o', '--output', required=True, help='a directory for output files')
-    parser.add_argument('-l', '--language', default='objc', help='language, default: objc')
+    parser = argparse.ArgumentParser(
+        description=('Convert json to model source file. '
+                     'Currently supports Objective C'),
+        epilog='Please send bug reports to clowwindy <clowwindy42@gmail.com>')
+    parser.add_argument('-i', '--input', required=True,
+                        help='a directory containing json files')
+    parser.add_argument('-o', '--output', required=True,
+                        help='a directory for output files')
+    parser.add_argument('-l', '--language', default='objc',
+                        help='language, default: objc')
     return parser.parse_args()
 
 

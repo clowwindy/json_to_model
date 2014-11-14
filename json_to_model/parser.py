@@ -1,9 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import json
-import glob
-
 
 class Context(object):
     def __init__(self):
@@ -94,5 +91,4 @@ def get_generator(name):
     elif name == 'swift':
         from json_to_model.generators import swift
         return swift
-    raise Exception('language %s not supported' % name )
-
+    raise Exception('language %s not supported' % name)

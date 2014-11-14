@@ -1,0 +1,12 @@
+language: python
+python:
+  - 2.6
+  - 2.7
+  - pypy
+before_install:
+  - pip install pep8 pyflakes
+  - python setup.py develop
+script:
+  - pep8 .
+  - pyflakes .
+  - cd tests && ./build_models.sh

@@ -14,8 +14,8 @@ setup(
         'json_to_model.generators': ['templates/*']
     },
     install_requires=[
-                      'Inflector==2.0.1',
-                      'Jinja2',
+        'Inflector==2.0.1',
+        'Jinja2',
     ],
     entry_points="""
     [console_scripts]

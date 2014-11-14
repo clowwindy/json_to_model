@@ -4,7 +4,7 @@
 import time
 import os.path
 import inflector
-from json_to_model.parser import NodeType, TreeNode
+from json_to_model.parser import NodeType
 from jinja2 import Environment, PackageLoader
 
 type_map = {
@@ -36,7 +36,8 @@ def get_property_type(context, node):
     if result is None:
         return '%s' % english.classify(node.class_name)
     if result == 'Array':
-        return '%s<%s>' % (result, get_type_of_first_obj_in_array(context, node))
+        return '%s<%s>' % (result,
+                           get_type_of_first_obj_in_array(context, node))
     return result
 
 
@@ -71,7 +72,8 @@ def property_is_inherited(context, node, property):
 
 
 def gen_code(pathname, context):
-    env = Environment(loader=PackageLoader('json_to_model.generators', 'templates'))
+    env = Environment(loader=PackageLoader('json_to_model.generators',
+                                           'templates'))
     source_template = env.get_template('swift.swift')
     for class_name, clazz in context.classes.iteritems():
         original_name = class_name
@@ -94,9 +96,13 @@ def gen_code(pathname, context):
                 if node.children[0].class_name:
                     includes.add(get_property_type(context, node.children[0]))
 
-        super_name = english.classify(clazz.super_class.class_name) if clazz.super_class else 'NSObject'
+        super_name = english.classify(clazz.super_class.class_name)\
+            if clazz.super_class else 'NSObject'
         if super_name != 'NSObject':
             includes.add(super_name)
 
         with open(os.path.join(pathname, '%s.swift' % class_name), 'wb') as f:
-            f.write(source_template.render(time=time.ctime(), class_name=class_name, super_name=super_name, properties=properties))
+            f.write(source_template.render(time=time.ctime(),
+                                           class_name=class_name,
+                                           super_name=super_name,
+                                           properties=properties))

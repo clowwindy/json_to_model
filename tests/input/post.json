@@ -1,0 +1,26 @@
+{
+    "__class__": "Post",
+    "id": 1024,
+    "title": "Vocation",
+    "summary": "We went to the islands.",
+    "time": 1415952555,
+    "user": {
+      "__class__": "User",
+      "username": "Alice",
+      "age": 17,
+      "email": "alice@somemail.com",
+      "registered": true
+    },
+    "replies": [
+      {
+        "__class__": "Reply",
+        "__super__": "Post",
+        "to_id": 1024
+      }, 
+      {
+        "__class__": "Reply",
+        "__super__": "Post",
+        "reply_to": 1024
+      }
+    ]
+}
