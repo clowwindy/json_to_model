@@ -1,6 +1,7 @@
 JSON to model
 =============
 
+[![Build Status]][Travis CI]
 [![PyPI version]][PyPI]
 
 Convert JSON api to Objective-C model (other languages as well in the future)
@@ -126,6 +127,8 @@ And a peek at the [HMRLatestComment initWithJSONDictionary]:
 See [tests] for how it works.
 
 
+[Build Status]:      https://travis-ci.org/clowwindy/json_to_model.svg?branch=master
 [PyPI]:              https://pypi.python.org/pypi/json_to_model
 [PyPI version]:      https://img.shields.io/pypi/v/json_to_model.svg?style=flat
+[Travis CI]:         https://travis-ci.org/clowwindy/json_to_model
 [tests]:             https://github.com/clowwindy/json_to_model/tree/master/tests
