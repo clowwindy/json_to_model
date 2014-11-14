@@ -123,5 +123,9 @@ And a peek at the [HMRLatestComment initWithJSONDictionary]:
 }
 ```
 
+See [tests] for how it works.
+
+
 [PyPI]:              https://pypi.python.org/pypi/json_to_model
 [PyPI version]:      https://img.shields.io/pypi/v/json_to_model.svg?style=flat
+[tests]:             https://github.com/clowwindy/json_to_model/tree/master/tests
