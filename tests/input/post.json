@@ -15,7 +15,7 @@
       {
         "__class__": "Reply",
         "__super__": "Post",
-        "to_id": 1024
+        "reply_to": 1024
       }, 
       {
         "__class__": "Reply",
