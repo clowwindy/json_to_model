@@ -54,7 +54,7 @@
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
 
  
-    dictionary[@"author"] = (self.author == nil) ? [NSNull null] : self.author;
+    dictionary[@"author"] = (self.author == nil) ? [NSNull null] : [self.author JSONDictionary];
   
     {
         NSMutableArray *_ = [[NSMutableArray alloc] init];

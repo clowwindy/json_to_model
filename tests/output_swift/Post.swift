@@ -78,7 +78,7 @@ class Post : NSObject {
         var dictionary : NSMutableDictionary = NSMutableDictionary()
 
  
-        dictionary["author"] = (self.author == nil) ? NSNull() : self.author
+        dictionary["author"] = (self.author == nil) ? NSNull() : self.author.JSONDictionary()
   
         var _replies : NSMutableArray = NSMutableArray()
         dictionary["replies"] = _replies
