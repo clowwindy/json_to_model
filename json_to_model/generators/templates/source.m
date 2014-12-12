@@ -90,7 +90,7 @@
         {% endif %}
     }
 {% else %}
-    dictionary[@"{{ property.original_name }}"] = (self.{{ property.name }} == nil) ? [NSNull null] : self.{{ property.name }};
+    dictionary[@"{{ property.original_name }}"] = (self.{{ property.name }} == nil) ? [NSNull null] : [self.{{ property.name }} JSONDictionary];
 {% endif %} {% endfor %}
     return dictionary;
 }

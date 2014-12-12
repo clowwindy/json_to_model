@@ -95,7 +95,7 @@ class {{ class_name }} : {{ super_name }} {
             {% endif %}
         }
 {% else %}
-        dictionary["{{ property.original_name }}"] = (self.{{ property.name }} == nil) ? NSNull() : self.{{ property.name }}
+        dictionary["{{ property.original_name }}"] = (self.{{ property.name }} == nil) ? NSNull() : self.{{ property.name }}.JSONDictionary()
 {% endif %} {% endfor %}
         return dictionary;
     }
