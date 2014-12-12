@@ -20,7 +20,7 @@
       {
         "__class__": "Reply",
         "__super__": "Post",
-        "to_id": 1024
+        "__ignore__": 0
       }
     ]
 }

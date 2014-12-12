@@ -8,7 +8,8 @@ class Context(object):
 
     def add_node(self, node):
         if node.class_name:
-            self.classes[node.class_name] = node
+            if not node.should_ignore:
+                self.classes[node.class_name] = node
 
     def build_inheritance(self):
         for k, v in self.classes.iteritems():
@@ -34,6 +35,7 @@ class TreeNode(object):
         self.class_name = None
         self.super_class = None
         self.super_class_name = None
+        self.should_ignore = False
 
     def __str__(self):
         return '%s %s' % (self.name, self.type)
@@ -64,6 +66,8 @@ def parse_node(json_node, parent_node, context):
                     parent_node.class_name = v
                 elif k == '__super__':
                     parent_node.super_class_name = v
+                elif k == '__ignore__':
+                    parent_node.should_ignore = True
                 continue
             child = TreeNode()
             child.name = k

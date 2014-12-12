@@ -12,7 +12,7 @@
 - (NSData *)JSONData;
 
 
-@property (nonatomic, assign) NSInteger toId;
+@property (nonatomic, assign) NSInteger replyTo;
 
 
 @end

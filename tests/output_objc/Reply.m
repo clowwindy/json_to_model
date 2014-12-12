@@ -14,7 +14,7 @@
 
     if (self) {
  
-        self.toId = (dictionary[@"to_id"] != [NSNull null]) ? [dictionary[@"to_id"] integerValue] : 0;
+        self.replyTo = (dictionary[@"reply_to"] != [NSNull null]) ? [dictionary[@"reply_to"] integerValue] : 0;
  
     }
     return self;
@@ -39,7 +39,7 @@
     NSMutableDictionary *dictionary = (NSMutableDictionary *)[super JSONDictionary];
 
  
-    dictionary[@"to_id"] = @(self.toId);
+    dictionary[@"reply_to"] = @(self.replyTo);
  
     return dictionary;
 }
